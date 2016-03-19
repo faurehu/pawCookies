@@ -66,6 +66,9 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	__webpack_require__(171);
+
+
 	var store = (0, _redux.createStore)(_reducers2.default);
 	var rootEl = document.getElementById('container');
 
@@ -20529,6 +20532,12 @@
 	      return state;
 	  }
 	}
+
+/***/ },
+/* 171 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
