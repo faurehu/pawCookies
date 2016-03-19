@@ -4,6 +4,13 @@
   "name": "Paw Cookie Collector",
   "description": "A Chrome extension to export your cookies to Paw.",
   "version": "0.0.1",
-
-  "devtools_page": "index.html"
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "devtools_page": "index.html",
+  "permissions": [
+    "cookies",
+    "http://*/*",
+    "https://*/*"
+  ]
 }

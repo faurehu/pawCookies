@@ -19,5 +19,9 @@ function render() {
   );
 }
 
+window.doSomething = function doSomething(msg) {
+  console.log('Message received! ', msg);
+};
+
 render();
 store.subscribe(render);

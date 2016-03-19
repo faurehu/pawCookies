@@ -5,3 +5,7 @@ npm-debug.log*
 
 # Dependency directories
 node_modules
+
+# Builds
+app/bundle.js
+app/style.css
