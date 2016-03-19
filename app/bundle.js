@@ -52,19 +52,19 @@
 
 	var _reactDom = __webpack_require__(158);
 
-	var _redux = __webpack_require__(165);
+	var _redux = __webpack_require__(159);
 
-	var _CookieTable = __webpack_require__(177);
+	var _CookieTable = __webpack_require__(169);
 
 	var _CookieTable2 = _interopRequireDefault(_CookieTable);
 
-	var _reducers = __webpack_require__(178);
+	var _reducers = __webpack_require__(170);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(179);
+	__webpack_require__(171);
 
 
 	var store = (0, _redux.createStore)(_reducers2.default);
@@ -19685,13 +19685,7 @@
 
 
 /***/ },
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -19699,27 +19693,27 @@
 	exports.__esModule = true;
 	exports.compose = exports.applyMiddleware = exports.bindActionCreators = exports.combineReducers = exports.createStore = undefined;
 
-	var _createStore = __webpack_require__(166);
+	var _createStore = __webpack_require__(160);
 
 	var _createStore2 = _interopRequireDefault(_createStore);
 
-	var _combineReducers = __webpack_require__(170);
+	var _combineReducers = __webpack_require__(164);
 
 	var _combineReducers2 = _interopRequireDefault(_combineReducers);
 
-	var _bindActionCreators = __webpack_require__(172);
+	var _bindActionCreators = __webpack_require__(166);
 
 	var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
 
-	var _applyMiddleware = __webpack_require__(173);
+	var _applyMiddleware = __webpack_require__(167);
 
 	var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
 
-	var _compose = __webpack_require__(174);
+	var _compose = __webpack_require__(168);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
-	var _warning = __webpack_require__(171);
+	var _warning = __webpack_require__(165);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -19743,7 +19737,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 166 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -19752,7 +19746,7 @@
 	exports.ActionTypes = undefined;
 	exports["default"] = createStore;
 
-	var _isPlainObject = __webpack_require__(167);
+	var _isPlainObject = __webpack_require__(161);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
@@ -19964,11 +19958,11 @@
 	}
 
 /***/ },
-/* 167 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isHostObject = __webpack_require__(168),
-	    isObjectLike = __webpack_require__(169);
+	var isHostObject = __webpack_require__(162),
+	    isObjectLike = __webpack_require__(163);
 
 	/** `Object#toString` result references. */
 	var objectTag = '[object Object]';
@@ -20036,7 +20030,7 @@
 
 
 /***/ },
-/* 168 */
+/* 162 */
 /***/ function(module, exports) {
 
 	/**
@@ -20062,7 +20056,7 @@
 
 
 /***/ },
-/* 169 */
+/* 163 */
 /***/ function(module, exports) {
 
 	/**
@@ -20096,7 +20090,7 @@
 
 
 /***/ },
-/* 170 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -20104,13 +20098,13 @@
 	exports.__esModule = true;
 	exports["default"] = combineReducers;
 
-	var _createStore = __webpack_require__(166);
+	var _createStore = __webpack_require__(160);
 
-	var _isPlainObject = __webpack_require__(167);
+	var _isPlainObject = __webpack_require__(161);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _warning = __webpack_require__(171);
+	var _warning = __webpack_require__(165);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -20229,7 +20223,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 171 */
+/* 165 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -20258,7 +20252,7 @@
 	}
 
 /***/ },
-/* 172 */
+/* 166 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -20314,7 +20308,7 @@
 	}
 
 /***/ },
-/* 173 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20324,7 +20318,7 @@
 	exports.__esModule = true;
 	exports["default"] = applyMiddleware;
 
-	var _compose = __webpack_require__(174);
+	var _compose = __webpack_require__(168);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
@@ -20376,7 +20370,7 @@
 	}
 
 /***/ },
-/* 174 */
+/* 168 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -20410,12 +20404,10 @@
 	}
 
 /***/ },
-/* 175 */,
-/* 176 */,
-/* 177 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -20433,7 +20425,7 @@
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /* eslint-disable no-alert */
 
 	var CookieTable = function (_Component) {
 	  _inherits(CookieTable, _Component);
@@ -20448,65 +20440,93 @@
 	  }
 
 	  _createClass(CookieTable, [{
-	    key: 'renderCookies',
+	    key: "exportCookie",
+	    value: function exportCookie(index) {
+	      if (index < 0) {
+	        alert(this.props.cookies);
+	        return;
+	      }
+	      alert(this.props.cookies[index]);
+	    }
+	  }, {
+	    key: "renderCookies",
 	    value: function renderCookies() {
+	      var _this2 = this;
+
 	      return this.props.cookies.map(function (cookie, index) {
 	        return _react2.default.createElement(
-	          'tr',
-	          { key: index },
+	          "tr",
+	          { key: index, className: "rows" },
 	          _react2.default.createElement(
-	            'td',
+	            "td",
 	            null,
 	            cookie.name
 	          ),
 	          _react2.default.createElement(
-	            'td',
+	            "td",
 	            null,
 	            cookie.value
 	          ),
 	          _react2.default.createElement(
-	            'td',
+	            "td",
 	            null,
 	            cookie.domain
+	          ),
+	          _react2.default.createElement(
+	            "td",
+	            { onClick: _this2.exportCookie.bind(_this2, [index]),
+	              className: "exportButton" },
+	            "Export"
 	          )
 	        );
 	      });
 	    }
 	  }, {
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'div',
+	        "div",
 	        null,
 	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Cookies'
+	          "div",
+	          { className: "headerDiv" },
+	          _react2.default.createElement(
+	            "span",
+	            { className: "title" },
+	            "Cookies"
+	          ),
+	          _react2.default.createElement(
+	            "span",
+	            { onClick: this.exportCookie.bind(this, [-1]),
+	              className: "exportAllButton" },
+	            "Export all"
+	          )
 	        ),
 	        _react2.default.createElement(
-	          'table',
+	          "table",
 	          null,
 	          _react2.default.createElement(
-	            'tbody',
+	            "tbody",
 	            null,
 	            _react2.default.createElement(
-	              'tr',
-	              null,
+	              "tr",
+	              { className: "header" },
 	              _react2.default.createElement(
-	                'th',
+	                "td",
 	                null,
-	                'Name'
+	                "Name"
 	              ),
 	              _react2.default.createElement(
-	                'th',
+	                "td",
 	                null,
-	                'Value'
+	                "Value"
 	              ),
 	              _react2.default.createElement(
-	                'th',
+	                "td",
 	                null,
-	                'Domain'
-	              )
+	                "Domain"
+	              ),
+	              _react2.default.createElement("td", null)
 	            ),
 	            this.renderCookies()
 	          )
@@ -20525,7 +20545,7 @@
 	exports.default = CookieTable;
 
 /***/ },
-/* 178 */
+/* 170 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -20549,7 +20569,7 @@
 	}
 
 /***/ },
-/* 179 */
+/* 171 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

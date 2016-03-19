@@ -1,3 +1,52 @@
 #container {
-  margin: 10%;
+  margin: 2%;
+
+  .headerDiv {
+    max-width: 680px;
+
+    .title {
+      font-size: 20px;
+    }
+
+    .exportAllButton {
+      float: right;
+
+      &:hover {
+        color: rgb(234, 13, 21);
+      }
+    }
+  }
+
+  table {
+    border: 1px solid rgb(175, 175, 175);
+    border-spacing: 0;
+    background-color: rgb(238, 238, 238);
+    margin-top: 20px;
+
+    .header {
+      td {
+        border-bottom: 1px solid rgb(175, 175, 175);
+        text-align: left;
+        padding: 5px;
+      }
+    }
+
+    .rows {
+      &:hover {
+        background-color: rgb(220, 229, 242);
+      }
+
+      td {
+        word-wrap: break-word;
+        max-width: 200px;
+        padding: 5px;
+      }
+
+      .exportButton {
+        &:hover {
+          color: rgb(234, 13, 21);
+        }
+      }
+    }
+  }
 }

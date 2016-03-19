@@ -1,2 +1,27 @@
 #container {
-  margin: 10%; }
+  margin: 2%; }
+  #container .headerDiv {
+    max-width: 680px; }
+    #container .headerDiv .title {
+      font-size: 20px; }
+    #container .headerDiv .exportAllButton {
+      float: right; }
+      #container .headerDiv .exportAllButton:hover {
+        color: #ea0d15; }
+  #container table {
+    border: 1px solid #afafaf;
+    border-spacing: 0;
+    background-color: #eeeeee;
+    margin-top: 20px; }
+    #container table .header td {
+      border-bottom: 1px solid #afafaf;
+      text-align: left;
+      padding: 5px; }
+    #container table .rows:hover {
+      background-color: #dce5f2; }
+    #container table .rows td {
+      word-wrap: break-word;
+      max-width: 200px;
+      padding: 5px; }
+    #container table .rows .exportButton:hover {
+      color: #ea0d15; }

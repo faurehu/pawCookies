@@ -1,12 +1,3 @@
-/*
-TODO:
-- [x] Get the cookies
-- [x] Send them to devtool process
-- Initalise store with cookies
-- Render the components
-- Add a listener for cookie updates
-*/
-
 // Connect with the devtool process
 var ports = [];
 chrome.runtime.onConnect.addListener(function(newPort) {

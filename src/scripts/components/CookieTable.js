@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+
 import React, { Component, PropTypes } from 'react';
 
 class CookieTable extends Component {
@@ -6,12 +8,22 @@ class CookieTable extends Component {
     this.renderCookies = this.renderCookies.bind(this);
   }
 
+  exportCookie(index) {
+    if (index < 0) {
+      alert(this.props.cookies);
+      return;
+    }
+    alert(this.props.cookies[index]);
+  }
+
   renderCookies() {
     return this.props.cookies.map((cookie, index) =>
-      <tr key={index}>
+      <tr key={index} className="rows">
         <td>{cookie.name}</td>
         <td>{cookie.value}</td>
         <td>{cookie.domain}</td>
+        <td onClick={this.exportCookie.bind(this, [index])}
+          className="exportButton">Export</td>
       </tr>
     );
   }
@@ -19,13 +31,18 @@ class CookieTable extends Component {
   render() {
     return (
       <div>
-        <h1>Cookies</h1>
+        <div className="headerDiv">
+          <span className="title">Cookies</span>
+          <span onClick={this.exportCookie.bind(this, [-1])}
+            className="exportAllButton">Export all</span>
+        </div>
         <table>
           <tbody>
-            <tr>
-              <th>Name</th>
-              <th>Value</th>
-              <th>Domain</th>
+            <tr className="header">
+              <td>Name</td>
+              <td>Value</td>
+              <td>Domain</td>
+              <td></td>
             </tr>
             {this.renderCookies()}
           </tbody>
