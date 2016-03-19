@@ -1,9 +1,9 @@
-export default function counter(state = 0, action) {
+const initialState = [];
+
+export default function cookieJar(state = initialState, action) {
   switch (action.type) {
-  case 'INCREMENT':
-    return state + 1;
-  case 'DECREMENT':
-    return state - 1;
+  case 'RECEIVE_COOKIES':
+    return action.cookies.slice();
   default:
     return state;
   }

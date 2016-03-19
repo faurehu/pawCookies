@@ -5,7 +5,7 @@ function onCreate(newPanel) {
     // Maintain the communication with the background
     port.onMessage.addListener(function(msg) {
       if(app) {
-        app.doSomething(msg);
+        app.updateCookies(msg);
       }
     });
 

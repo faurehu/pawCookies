@@ -52,44 +52,36 @@
 
 	var _reactDom = __webpack_require__(158);
 
-	var _reactDom2 = _interopRequireDefault(_reactDom);
+	var _redux = __webpack_require__(165);
 
-	var _redux = __webpack_require__(159);
+	var _CookieTable = __webpack_require__(177);
 
-	var _Counter = __webpack_require__(169);
+	var _CookieTable2 = _interopRequireDefault(_CookieTable);
 
-	var _Counter2 = _interopRequireDefault(_Counter);
-
-	var _reducers = __webpack_require__(170);
+	var _reducers = __webpack_require__(178);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(171);
+	__webpack_require__(179);
 
 
 	var store = (0, _redux.createStore)(_reducers2.default);
-	var rootEl = document.getElementById('container');
 
-	function render() {
-	  _reactDom2.default.render(_react2.default.createElement(_Counter2.default, {
-	    value: store.getState(),
-	    onIncrement: function onIncrement() {
-	      return store.dispatch({ type: 'INCREMENT' });
-	    },
-	    onDecrement: function onDecrement() {
-	      return store.dispatch({ type: 'DECREMENT' });
-	    }
-	  }), rootEl);
-	}
-
-	window.doSomething = function doSomething(msg) {
-	  console.log('Message received! ', msg);
+	var reload = function reload() {
+	  (0, _reactDom.render)(_react2.default.createElement(_CookieTable2.default, { cookies: store.getState() }), document.getElementById('container'));
 	};
 
-	render();
-	store.subscribe(render);
+	reload();
+	store.subscribe(reload);
+
+	window.updateCookies = function doSomething(msg) {
+	  store.dispatch({
+	    type: 'RECEIVE_COOKIES',
+	    cookies: msg
+	  });
+	};
 
 /***/ },
 /* 1 */
@@ -19693,7 +19685,13 @@
 
 
 /***/ },
-/* 159 */
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -19701,27 +19699,27 @@
 	exports.__esModule = true;
 	exports.compose = exports.applyMiddleware = exports.bindActionCreators = exports.combineReducers = exports.createStore = undefined;
 
-	var _createStore = __webpack_require__(160);
+	var _createStore = __webpack_require__(166);
 
 	var _createStore2 = _interopRequireDefault(_createStore);
 
-	var _combineReducers = __webpack_require__(164);
+	var _combineReducers = __webpack_require__(170);
 
 	var _combineReducers2 = _interopRequireDefault(_combineReducers);
 
-	var _bindActionCreators = __webpack_require__(166);
+	var _bindActionCreators = __webpack_require__(172);
 
 	var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
 
-	var _applyMiddleware = __webpack_require__(167);
+	var _applyMiddleware = __webpack_require__(173);
 
 	var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
 
-	var _compose = __webpack_require__(168);
+	var _compose = __webpack_require__(174);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
-	var _warning = __webpack_require__(165);
+	var _warning = __webpack_require__(171);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -19745,7 +19743,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 160 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -19754,7 +19752,7 @@
 	exports.ActionTypes = undefined;
 	exports["default"] = createStore;
 
-	var _isPlainObject = __webpack_require__(161);
+	var _isPlainObject = __webpack_require__(167);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
@@ -19966,11 +19964,11 @@
 	}
 
 /***/ },
-/* 161 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isHostObject = __webpack_require__(162),
-	    isObjectLike = __webpack_require__(163);
+	var isHostObject = __webpack_require__(168),
+	    isObjectLike = __webpack_require__(169);
 
 	/** `Object#toString` result references. */
 	var objectTag = '[object Object]';
@@ -20038,7 +20036,7 @@
 
 
 /***/ },
-/* 162 */
+/* 168 */
 /***/ function(module, exports) {
 
 	/**
@@ -20064,7 +20062,7 @@
 
 
 /***/ },
-/* 163 */
+/* 169 */
 /***/ function(module, exports) {
 
 	/**
@@ -20098,7 +20096,7 @@
 
 
 /***/ },
-/* 164 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -20106,13 +20104,13 @@
 	exports.__esModule = true;
 	exports["default"] = combineReducers;
 
-	var _createStore = __webpack_require__(160);
+	var _createStore = __webpack_require__(166);
 
-	var _isPlainObject = __webpack_require__(161);
+	var _isPlainObject = __webpack_require__(167);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _warning = __webpack_require__(165);
+	var _warning = __webpack_require__(171);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -20231,7 +20229,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 165 */
+/* 171 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -20260,7 +20258,7 @@
 	}
 
 /***/ },
-/* 166 */
+/* 172 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -20316,7 +20314,7 @@
 	}
 
 /***/ },
-/* 167 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20326,7 +20324,7 @@
 	exports.__esModule = true;
 	exports["default"] = applyMiddleware;
 
-	var _compose = __webpack_require__(168);
+	var _compose = __webpack_require__(174);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
@@ -20378,7 +20376,7 @@
 	}
 
 /***/ },
-/* 168 */
+/* 174 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -20412,7 +20410,9 @@
 	}
 
 /***/ },
-/* 169 */
+/* 175 */,
+/* 176 */,
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20435,86 +20435,97 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Counter = function (_Component) {
-	  _inherits(Counter, _Component);
+	var CookieTable = function (_Component) {
+	  _inherits(CookieTable, _Component);
 
-	  function Counter(props) {
-	    _classCallCheck(this, Counter);
+	  function CookieTable(props) {
+	    _classCallCheck(this, CookieTable);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Counter).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CookieTable).call(this, props));
 
-	    _this.incrementAsync = _this.incrementAsync.bind(_this);
-	    _this.incrementIfOdd = _this.incrementIfOdd.bind(_this);
+	    _this.renderCookies = _this.renderCookies.bind(_this);
 	    return _this;
 	  }
 
-	  _createClass(Counter, [{
-	    key: 'incrementIfOdd',
-	    value: function incrementIfOdd() {
-	      if (this.props.value % 2 !== 0) {
-	        this.props.onIncrement();
-	      }
-	    }
-	  }, {
-	    key: 'incrementAsync',
-	    value: function incrementAsync() {
-	      setTimeout(this.props.onIncrement, 1000);
+	  _createClass(CookieTable, [{
+	    key: 'renderCookies',
+	    value: function renderCookies() {
+	      return this.props.cookies.map(function (cookie, index) {
+	        return _react2.default.createElement(
+	          'tr',
+	          { key: index },
+	          _react2.default.createElement(
+	            'td',
+	            null,
+	            cookie.name
+	          ),
+	          _react2.default.createElement(
+	            'td',
+	            null,
+	            cookie.value
+	          ),
+	          _react2.default.createElement(
+	            'td',
+	            null,
+	            cookie.domain
+	          )
+	        );
+	      });
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var _props = this.props;
-	      var value = _props.value;
-	      var onIncrement = _props.onIncrement;
-	      var onDecrement = _props.onDecrement;
-
 	      return _react2.default.createElement(
-	        'p',
+	        'div',
 	        null,
-	        'Clicked: ',
-	        value,
-	        ' times',
-	        ' ',
 	        _react2.default.createElement(
-	          'button',
-	          { onClick: onIncrement },
-	          '+'
+	          'h1',
+	          null,
+	          'Cookies'
 	        ),
-	        ' ',
 	        _react2.default.createElement(
-	          'button',
-	          { onClick: onDecrement },
-	          '-'
-	        ),
-	        ' ',
-	        _react2.default.createElement(
-	          'button',
-	          { onClick: this.incrementIfOdd },
-	          'Increment if odd'
-	        ),
-	        ' ',
-	        _react2.default.createElement(
-	          'button',
-	          { onClick: this.incrementAsync },
-	          'Increment async'
+	          'table',
+	          null,
+	          _react2.default.createElement(
+	            'tbody',
+	            null,
+	            _react2.default.createElement(
+	              'tr',
+	              null,
+	              _react2.default.createElement(
+	                'th',
+	                null,
+	                'Name'
+	              ),
+	              _react2.default.createElement(
+	                'th',
+	                null,
+	                'Value'
+	              ),
+	              _react2.default.createElement(
+	                'th',
+	                null,
+	                'Domain'
+	              )
+	            ),
+	            this.renderCookies()
+	          )
 	        )
 	      );
 	    }
 	  }]);
 
-	  return Counter;
+	  return CookieTable;
 	}(_react.Component);
 
-	Counter.propTypes = {
-	  onDecrement: _react.PropTypes.func.isRequired,
-	  onIncrement: _react.PropTypes.func.isRequired,
-	  value: _react.PropTypes.number.isRequired
+	CookieTable.propTypes = {
+	  cookies: _react.PropTypes.array
 	};
 
-	exports.default = Counter;
+	exports.default = CookieTable;
 
 /***/ },
-/* 170 */
+/* 178 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -20522,23 +20533,23 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = counter;
-	function counter() {
-	  var state = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
+	exports.default = cookieJar;
+	var initialState = [];
+
+	function cookieJar() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
 	  var action = arguments[1];
 
 	  switch (action.type) {
-	    case 'INCREMENT':
-	      return state + 1;
-	    case 'DECREMENT':
-	      return state - 1;
+	    case 'RECEIVE_COOKIES':
+	      return action.cookies.slice();
 	    default:
 	      return state;
 	  }
 	}
 
 /***/ },
-/* 171 */
+/* 179 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

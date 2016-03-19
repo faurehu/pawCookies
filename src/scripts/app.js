@@ -1,27 +1,25 @@
 require('../styles/main.scss');
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { createStore } from 'redux';
-import Counter from './components/Counter';
-import counter from './reducers';
+import CookieTable from './components/CookieTable';
+import cookieJar from './reducers';
 
-const store = createStore(counter);
-const rootEl = document.getElementById('container');
+const store = createStore(cookieJar);
 
-function render() {
-  ReactDOM.render(
-    <Counter
-      value={store.getState()}
-      onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
-      onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
-    />,
-    rootEl
+const reload = () => {
+  render(
+    <CookieTable cookies={store.getState()}/>,
+    document.getElementById('container')
   );
-}
-
-window.doSomething = function doSomething(msg) {
-  console.log('Message received! ', msg);
 };
 
-render();
-store.subscribe(render);
+reload();
+store.subscribe(reload);
+
+window.updateCookies = function doSomething(msg) {
+  store.dispatch({
+    type: 'RECEIVE_COOKIES',
+    cookies: msg
+  });
+};
