@@ -20502,9 +20502,9 @@
 	}(_react.Component);
 
 	Counter.propTypes = {
-	  value: _react.PropTypes.number.isRequired,
+	  onDecrement: _react.PropTypes.func.isRequired,
 	  onIncrement: _react.PropTypes.func.isRequired,
-	  onDecrement: _react.PropTypes.func.isRequired
+	  value: _react.PropTypes.number.isRequired
 	};
 
 	exports.default = Counter;
